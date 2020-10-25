@@ -37,8 +37,8 @@
   - [Installation](#installation)
      - [NodeJs](#nodejs)
      - [Git](#git)
-     - [Messenger](#messenger)
-     - [Arduino](#Arduino)
+     - [Chat Bot](#messenger)
+     - [NodeMCU](#nodemcu)
   <!-- - [Configuration](#configuration) -->
   - [Deploy](#deploy)
       - [Heroku](#heroku)
@@ -243,6 +243,7 @@ B. Wit.ai
 C. NodeMCU
 1. Received data from MQTT Broker and Turn on/off the lamp
 ```c
+
 // If a message is received on the topic esp8266/ghiscure/AC, you check if the message is either 1 or 0. Turns the ESP GPIO according to the message
 
   if(topic=="esp8266/ghiscure/AC"){
@@ -338,9 +339,9 @@ Edit .env with your app credentials
 npm install
 npm start
 ```
-<a name="Arduino"></a>
+<a name="nodemcu"></a>
 
-D.  Arduino
+D.  NodeMCU
 
 1. Install Arduino
 ```
@@ -376,7 +377,7 @@ Image
       *  witai_token
    4. Change your URL callback in facebook account
 2. Ngrok <br>
-   You can use ngrok to forwarding http protocol. Follow this tutorial to forward your localhost to public. Change your URL callback to ngrok url.
+   You can use ngrok to forwarding http protocol. Follow this tutorial to forward your localhost to public. Change your Facebook's URL callback to ngrok url.
    ```
    https://ngrok.com/docs
    ```
