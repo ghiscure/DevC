@@ -9,7 +9,7 @@
   <p align="center">
     Simple chat bot to control your home
     <br />
-    <a href="https://github.com/ghiscure/DevC"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ghiscure/DevC#toc"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://m.me/ghiscure">View Demo</a>
@@ -19,6 +19,8 @@
     <a href="https://github.com/ghiscure/DevC/issues">Request Feature</a>
   </p>
 </p>
+
+<a name="toc"></a>
 
 ## Table of Contents
 * **[Wit.ai](#wit)**
