@@ -25,13 +25,19 @@
 ## Table of Contents
 * **[Introduction](#introduction)**
 * **[Smart Home Unit and Component](#smarthome)**
-* **[Hardware Configuration](#hardware)**
+* **[System Configuration](#system)**
 * **[Chatbot as Control System](#chatbot)**
   - [Facebook Messenger](#messenger)
   - [Wit.ai](#wit.ai)
-* **[Communication](#ommunication)**
+* **[Communication](#communication)**
   - [API](#api)
   - [MQTT](#mqtt)
+* **[How To Use](#howtouse)**
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Run](#run)
+  
+  
 <!-- * **[Wit.ai](#wit)**
 * **[How it works](#works)**
 * **[Installation](#installation)**
@@ -43,6 +49,32 @@
 * **[FAQ](#questions)**
 * **[Requested Distributions](#requests)** -->
 * **[License](#project-license)**
+  
+<a name="introduction"></a>
+## Introduction
+<a name="smarthome"></a>
+## Smart Home Unit and Component
+<a name="system"></a>
+## System Configuration
+![System Configuration](./Documentation/img/System.png)
+
+<a name="chatbot"></a>
+## Chatbot as Control System
+
+  ### Facebook Messenger
+  <a name="mesenger"></a>
+  ### Wit.ai
+  <a name="wit.ai"></a>
+## Communcation
+<a name="communication"></a>
+  ### API
+  <a name="api"></a>
+  ### MQTT
+  <a name="mqtt"></a>
+
+
+
+
 
 <a name="wit.ai"></a>
 ## Wit.ai
