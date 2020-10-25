@@ -113,9 +113,9 @@ On this section i will show you how to build an app to control lamp.
       
     }
   }
-
-  ### NodeMCU
 ```
+
+### NodeMCU
 1. Received data from MQTT Broker and Turn on/off the lamp
 ```c
 // If a message is received on the topic esp8266/ghiscure/AC, you check if the message is either 1 or 0. Turns the ESP GPIO according to the message
