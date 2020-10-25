@@ -33,6 +33,10 @@
   - [API](#api)
   - [MQTT](#mqtt)
 * **[How it works](#works)**
+  - [Facebook Messenger](#facebook_messenger)
+  - [Wit.ai](#Wit_ai)
+  - [NodeMCU](#node_mcu)
+  
 * **[How To Use](#howtouse)**
   - [Installation](#installation)
      - [NodeJs](#nodejs)
@@ -97,6 +101,7 @@
 
 ## How it works
 
+<a name="facebook_messenger"></a>
 
 A. Facebook Messenger
 1. Received text message from user and send it to wit.ai
@@ -165,6 +170,7 @@ A. Facebook Messenger
        }     
     }
    ```
+<a name="wit_ai"></a>
 
 B. Wit.ai
 
@@ -239,6 +245,7 @@ B. Wit.ai
   }
 ```
 
+<a name="node_mcu"></a>
 
 C. NodeMCU
 1. Received data from MQTT Broker and Turn on/off the lamp
@@ -326,16 +333,17 @@ https://nodejs.org/en/download/
 
 C.  Facebook Messenger
 #### Prerequisite
-Before you use this app, you must register your app in facebook platform. You can follow this tutorial to get PAGE_ACCESS_TOKEN and VERIFY TOKEN.
+Before you use this app, you must register your app in facebook platform. You can follow this tutorial to get PAGE_ACCESS_TOKEN.
 ```
 https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
 ```
 
+After you have PAGE_ACCESS_TOKEN, just follow this step
 ```bash
 git clone https://github.com/ghiscure/DevC
 cd DevC
-cp .env.example .env
-Edit .env with your app credentials
+mv .env.example .env
+#Edit .env with your app credentials
 npm install
 npm start
 ```
