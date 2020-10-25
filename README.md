@@ -97,7 +97,76 @@
 
 ## How it works
 
-A. Wit.ai
+
+A. Facebook Messenger
+1. Received text message from user and send it to wit.ai
+   ```js
+   if (received_message.text) {
+      
+      // Send text to wit.ai and get response
+      var result = await getMessage(received_message.text)
+      var caps= `turning ${result[0][0]} the ${result[1][0]}`
+
+      // Send command to user
+      response = {
+        "text": caps
+      }
+      callSendAPI(sender_psid, response);
+
+
+      //send result to MQTT Broker and NodeMCU
+      var topic = `esp8266/ghiscure/${result[1][0]}` 
+      if(result[0][0]=='on'){
+      listen.publish(topic, "1");
+      console.log(`${result[0][0]}, ${topic}`);
+      }else{
+      listen.publish(topic, "0");
+      console.log(`${result[0][0]}, ${topic}`);
+      }
+      
+    } 
+   ```
+2. Received voice notes from user and send it to wit.ai
+   ```js
+   else if (received_message.attachments[0].type=="audio") {
+      console.log('audio')
+      
+      // Get the URL of the message attachment
+      let attachment_url = received_message.attachments[0].payload.url;
+      
+    // Convert voice notes to mp3
+     var result = await fetch(attachment_url)
+     proc = new ffmpeg({source:result.body})
+     proc.setFfmpegPath('ffmpeg')
+     result = proc.saveToFile('output.mp3',  function(stdout, stderr){
+          return "success"
+     })
+
+     // Send mp3 to wit.ai
+    var mimetype_ = "audio/mpeg3"
+     var readStream = fs.createReadStream("output.mp3")
+
+     // Get Result from wit.ai
+     result = await getMessagefromAudio(readStream, mimetype_)
+     console.log(result)
+     var caps= `turning ${result[0][0]} the ${result[1][0]}`
+     response = {
+      "text": caps
+    }
+
+    // send result to MQTT Broker and NodeMCU
+     callSendAPI(sender_psid, response);
+     if(result[0][0]=='on'){
+       listen.publish(topic, "1");
+       console.log(`${result[0][0]}, ${topic}`);
+       }else{
+       listen.publish(topic, "0");
+       console.log(`${result[0][0]}, ${topic}`);
+       }     
+    }
+   ```
+
+B. Wit.ai
 
 1. Get Message from text parameter
 ```js
@@ -170,70 +239,6 @@ A. Wit.ai
   }
 ```
 
-B. Facebook Messenger
-1. Received text message from user and send it to wit.ai
-   ```js
-   if (received_message.text) {
-      // Create the payload for a basic text message, which
-      // will be added to the body of our request to the Send API
-
-      var result = await getMessage(received_message.text)
-      var caps= `turning ${result[0][0]} the ${result[1][0]}`
-      response = {
-        "text": caps
-      }
-      callSendAPI(sender_psid, response);
-
-      var topic = `esp8266/ghiscure/${result[1][0]}` 
-      if(result[0][0]=='on'){
-      listen.publish(topic, "1");
-      console.log(`${result[0][0]}, ${topic}`);
-      }else{
-      listen.publish(topic, "0");
-      console.log(`${result[0][0]}, ${topic}`);
-      }
-      
-    } 
-   ```
-2. Received voice notes from user and send it to wit.ai
-   ```js
-   else if (received_message.attachments[0].type=="audio") {
-      console.log('audio')
-      
-      // Get the URL of the message attachment
-      let attachment_url = received_message.attachments[0].payload.url;
-      
-    // Convert mp4 to mp3
-     var result = await fetch(attachment_url)
-     proc = new ffmpeg({source:result.body})
-     proc.setFfmpegPath('ffmpeg')
-     result = proc.saveToFile('output.mp3',  function(stdout, stderr){
-          return "success"
-     })
-
-     // Send mp3 to wit.ai
-    var mimetype_ = "audio/mpeg3"
-     var readStream = fs.createReadStream("output.mp3")
-
-     // Get Result from wit.ai
-     result = await getMessagefromAudio(readStream, mimetype_)
-     console.log(result)
-     var caps= `turning ${result[0][0]} the ${result[1][0]}`
-     response = {
-      "text": caps
-    }
-
-    // send result to MQTT Broker and NodeMCU
-     callSendAPI(sender_psid, response);
-     if(result[0][0]=='on'){
-       listen.publish(topic, "1");
-       console.log(`${result[0][0]}, ${topic}`);
-       }else{
-       listen.publish(topic, "0");
-       console.log(`${result[0][0]}, ${topic}`);
-       }     
-    }
-   ```
 
 C. NodeMCU
 1. Received data from MQTT Broker and Turn on/off the lamp
