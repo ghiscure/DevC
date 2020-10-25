@@ -23,7 +23,16 @@
 <a name="toc"></a>
 
 ## Table of Contents
-* **[Wit.ai](#wit)**
+* **[Introduction](#introduction)**
+* **[Smart Home Unit and Component](#smarthome)**
+* **[Hardware Configuration](#hardware)**
+* **[Chatbot as Control System](#chatbot)**
+  - [Facebook Messenger](#messenger)
+  - [Wit.ai](#wit.ai)
+* **[Communication](#ommunication)**
+  - [API](#api)
+  - [MQTT](#mqtt)
+<!-- * **[Wit.ai](#wit)**
 * **[How it works](#works)**
 * **[Installation](#installation)**
   - [NodeJs](#nodejs)
@@ -32,7 +41,7 @@
   - [Arduino](#Arduino)
 * **[Tests](#tests)**
 * **[FAQ](#questions)**
-* **[Requested Distributions](#requests)**
+* **[Requested Distributions](#requests)** -->
 * **[License](#project-license)**
 
 <a name="wit.ai"></a>
