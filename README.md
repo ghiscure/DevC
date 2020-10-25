@@ -32,10 +32,16 @@
 * **[Communication](#communication)**
   - [API](#api)
   - [MQTT](#mqtt)
+* **[How it works](#works)**
 * **[How To Use](#howtouse)**
   - [Installation](#installation)
+     - [NodeJs](#nodejs)
+     - [Git](#git)
+     - [Messenger](#messenger)
+     - [Arduino](#Arduino)
   - [Configuration](#configuration)
   - [Run](#run)
+* **[License](#project-license)** 
   
   
 <!-- * **[Wit.ai](#wit)**
@@ -48,16 +54,25 @@
 * **[Tests](#tests)**
 * **[FAQ](#questions)**
 * **[Requested Distributions](#requests)** -->
-* **[License](#project-license)**
   
+
+<!-- Introduction -->
 <a name="introduction"></a>
 ## Introduction
+
+
+<!-- Smart Home -->
 <a name="smarthome"></a>
 ## Smart Home Unit and Component
+
+
+<!-- System Configurantion -->
 <a name="system"></a>
 ## System Configuration
 ![System Configuration](./Documentation/img/System.png)
 
+
+<!-- Chatbot -->
 <a name="chatbot"></a>
 ## Chatbot as Control System
 
