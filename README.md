@@ -39,23 +39,12 @@
      - [Git](#git)
      - [Messenger](#messenger)
      - [Arduino](#Arduino)
-  - [Configuration](#configuration)
-  - [Run](#run)
+  <!-- - [Configuration](#configuration) -->
+  - [Deploy](#deploy)
+      - [Heroku](#heroku)
+      - [Ngrok](#ngrok)
 * **[License](#project-license)** 
   
-  
-<!-- * **[Wit.ai](#wit)**
-* **[How it works](#works)**
-* **[Installation](#installation)**
-  - [NodeJs](#nodejs)
-  - [Git](#git)
-  - [Messenger](#messenger)
-  - [Arduino](#Arduino)
-* **[Tests](#tests)**
-* **[FAQ](#questions)**
-* **[Requested Distributions](#requests)** -->
-  
-
 <!-- Introduction -->
 <a name="introduction"></a>
 ## Introduction
@@ -76,31 +65,39 @@
 <a name="chatbot"></a>
 ## Chatbot as Control System
 
-  ### Facebook Messenger
   <a name="mesenger"></a>
-  ### Wit.ai
+
+  ### Facebook Messenger
+  
   <a name="wit.ai"></a>
-## Communcation
+  
+  ### [wit.ai](#)
+  ### Build Your APP
+  On this section i will show you how to build an app to control lamp.
+
+
 <a name="communication"></a>
-  ### API
+
+## Communcation
   <a name="api"></a>
-  ### MQTT
+  
+  ### API
+  
   <a name="mqtt"></a>
+  
+  ### MQTT
 
 
 
 
 
-<a name="wit.ai"></a>
-## Wit.ai
-### Build Your APP
-On this section i will show you how to build an app to control lamp.
 
 
 <a name="works"></a>
+
 ## How it works
 
-### Wit.ai
+A. Wit.ai
 
 1. Get Message from text parameter
 ```js
@@ -173,7 +170,72 @@ On this section i will show you how to build an app to control lamp.
   }
 ```
 
-### NodeMCU
+B. Facebook Messenger
+1. Received text message from user and send it to wit.ai
+   ```js
+   if (received_message.text) {
+      // Create the payload for a basic text message, which
+      // will be added to the body of our request to the Send API
+
+      var result = await getMessage(received_message.text)
+      var caps= `turning ${result[0][0]} the ${result[1][0]}`
+      response = {
+        "text": caps
+      }
+      callSendAPI(sender_psid, response);
+
+      var topic = `esp8266/ghiscure/${result[1][0]}` 
+      if(result[0][0]=='on'){
+      listen.publish(topic, "1");
+      console.log(`${result[0][0]}, ${topic}`);
+      }else{
+      listen.publish(topic, "0");
+      console.log(`${result[0][0]}, ${topic}`);
+      }
+      
+    } 
+   ```
+2. Received voice notes from user and send it to wit.ai
+   ```js
+   else if (received_message.attachments[0].type=="audio") {
+      console.log('audio')
+      
+      // Get the URL of the message attachment
+      let attachment_url = received_message.attachments[0].payload.url;
+      
+    // Convert mp4 to mp3
+     var result = await fetch(attachment_url)
+     proc = new ffmpeg({source:result.body})
+     proc.setFfmpegPath('ffmpeg')
+     result = proc.saveToFile('output.mp3',  function(stdout, stderr){
+          return "success"
+     })
+
+     // Send mp3 to wit.ai
+    var mimetype_ = "audio/mpeg3"
+     var readStream = fs.createReadStream("output.mp3")
+
+     // Get Result from wit.ai
+     result = await getMessagefromAudio(readStream, mimetype_)
+     console.log(result)
+     var caps= `turning ${result[0][0]} the ${result[1][0]}`
+     response = {
+      "text": caps
+    }
+
+    // send result to MQTT Broker and NodeMCU
+     callSendAPI(sender_psid, response);
+     if(result[0][0]=='on'){
+       listen.publish(topic, "1");
+       console.log(`${result[0][0]}, ${topic}`);
+       }else{
+       listen.publish(topic, "0");
+       console.log(`${result[0][0]}, ${topic}`);
+       }     
+    }
+   ```
+
+C. NodeMCU
 1. Received data from MQTT Broker and Turn on/off the lamp
 ```c
 // If a message is received on the topic esp8266/ghiscure/AC, you check if the message is either 1 or 0. Turns the ESP GPIO according to the message
@@ -211,11 +273,16 @@ client.subscribe("esp8266/ghiscure/AC");
 client.subscribe("esp8266/ghiscure/lamp");
 ```
 
+<a name="howtouse"></a>
+
+## How to Use
+
+
 <a name="installation"></a>
 
-## Installation
+### Installation
 
-### Git
+A.  Git
 1. Start by updating the package index
 ```bash
 sudo apt update
@@ -233,7 +300,7 @@ git --version
 https://git-scm.com/download/win
 ```
 
-### NodeJs
+B.  NodeJs
 1. Debian Based
 ```sh
 # Using Ubuntu
@@ -251,18 +318,24 @@ https://nodejs.org/en/download/
 
 <a name="messenger"></a>
 
-### Messenger
+C.  Facebook Messenger
+#### Prerequisite
+Before you use this app, you must register your app in facebook platform. You can follow this tutorial to get PAGE_ACCESS_TOKEN and VERIFY TOKEN.
+```
+https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
+```
+
 ```bash
 git clone https://github.com/ghiscure/DevC
 cd DevC
-npm install
 cp .env.example .env
-Change .env with your credentials
+Edit .env with your app credentials
+npm install
 npm start
 ```
 <a name="Arduino"></a>
 
-### Arduino
+D.  Arduino
 
 1. Install Arduino
 ```
@@ -282,9 +355,31 @@ const char* password = ""; // password ssid
 ```
 Image
 ```
+### Deploy
+1. Heroku
+   1. You can use this tutorial to deploy app
+   ```
+   https://devcenter.heroku.com/articles/deploying-nodejs
+   ```
+   2. You must edit environment variable. You can use this tutorial to edit env variable. 
+   ```
+   https://devcenter.heroku.com/articles/config-vars
+   ```
+   3. There are 3 environment variable that you must set in config vars.
+      *  PAGE_ACCESS_TOKEN
+      *  VERIFY_TOKEN
+      *  witai_token
+   4. Change your URL callback in facebook account
+2. Ngrok <br>
+   You can use ngrok to forwarding http protocol. Follow this tutorial to forward your localhost to public. Change your URL callback to ngrok url.
+   ```
+   https://ngrok.com/docs
+   ```
 
 
 
+
+<a name="project-license"></a>
 
 ## License
 Usage is provided under the [MIT License](http://opensource.org/licenses/mit-license.php). See LICENSE for the full details.
