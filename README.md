@@ -347,20 +347,24 @@ D.  NodeMCU
 ```
 https://www.arduino.cc/en/main/software
 ```
-2. Wiring Schematic
+2. Install NodeMCU board in Arduino
+```
+https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
+```
+3. Wiring Schematic
 ```
 Image
 ```
-3. Edit config of wireless connection
+4. Edit config of wireless connection
 ```c
 // Change the credentials below, so your ESP8266 connects to your router
 const char* ssid = ""; // your ssid name
 const char* password = ""; // password ssid
 ```
-4. Upload file to NodeMCU
-```
-Image
-```
+5. Upload file to NodeMCU
+
+![Upload to NodeMCU](./Documentation/img/upload_nodemcu.png)
+
 ### Deploy
 1. Heroku
    1. You can use this tutorial to deploy app
