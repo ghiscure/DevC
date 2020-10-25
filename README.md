@@ -12,7 +12,7 @@
     <a href="https://github.com/ghiscure/DevC"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="m.me/ghiscure">View Demo</a>
+    <a href="https://m.me/ghiscure">View Demo</a>
     ·
     <a href="https://github.com/ghiscure/DevC/issues">Report Bug</a>
     ·
