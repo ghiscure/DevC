@@ -9,7 +9,7 @@
   <p align="center">
     bot percakapan simpel untuk mengatur rumah anda
     <br />
-    <a href="https://github.com/ghiscure/DevC#toc"><strong>Jelajahi dokumentasi »</strong></a>
+    <a href="#toc"><strong>Jelajahi dokumentasi »</strong></a>
     <br />
     <br />
     <a href="https://m.me/ghiscure">Lihat Demo</a>
