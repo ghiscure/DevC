@@ -67,12 +67,16 @@ In this repository we will design a smart home system that integrate with Chat b
 <a name="smarthome"></a>
 
 ## Smart Home Unit and Component
-In IoT, there are 3 important things => node, gateaway and server. Node is the edge devices that have function to be an input or output. The example of nodes are Lamp, Air Conditioner, Pump, and Selenium Door. Gateaway is a connector between server and node. Gateaway can be a microcontroller or mini computer. These are components needed in this tutorial:
+In IoT, there are 3 important things => node, gateaway and server. Node is the edge devices that have function to be an input or output. The example of nodes are Lamp, Air Conditioner, Pump, and Selenium Door. Gateaway is a connector between server and node. Gateaway can be a microcontroller or mini computer. 
+![Architectur](Documentation/img/arch.png)
+These are components needed in this tutorial:
 1. LED
 2. Breadboard
 3. Resistor 1K ohm
 4. NodeMCU (ESP8266)
 5. Jumper
+
+![Component](Documentation/img/component.png)
 
 
 <!-- System Configurantion -->
