@@ -19,7 +19,11 @@
     <a href="https://github.com/ghiscure/DevC/issues">Request Feature</a>
   </p>
 </p>
-*Read this in other languages: [English](README.md), [Indonesia](README.id.md).*
+
+# Ghiscure
+*Simple Chat bot to control your home*
+
+*Read this in other languages: [English](README.md), [Indonesian](README.id.md).*
 
 <a name="toc"></a>
 
