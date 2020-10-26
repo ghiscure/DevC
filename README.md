@@ -408,7 +408,7 @@ const char* password = ""; // password ssid
       *  PAGE_ACCESS_TOKEN
       *  VERIFY_TOKEN
       *  witai_token
-   4. Change your URL callback in facebook account
+   4. Change your Facebook callback URL to heroku
 2. Ngrok <br>
    You can use ngrok to forwarding http protocol. Follow this [tutorial](https://ngrok.com/docs) to forward your localhost to public. Change your Facebook's URL callback to ngrok url.
    ```bash
