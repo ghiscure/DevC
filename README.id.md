@@ -454,15 +454,15 @@ const char* password = ""; // password ssid
    ```
    https://devcenter.heroku.com/articles/deploying-nodejs
    ```
-   1. Anda harus mengubah environment variable. Anda bisa gunakan [panduan](https://devcenter.heroku.com/articles/config-vars) ini untuk mengedit variable env. 
+   2. Anda harus mengubah environment variable. Anda bisa gunakan [panduan](https://devcenter.heroku.com/articles/config-vars) ini untuk mengedit variable env. 
    ```
    https://devcenter.heroku.com/articles/config-vars
    ```
-   1. Terdapat 3 environment variable yang harus diatur dalam config vars.
+   3. Terdapat 3 environment variable yang harus diatur dalam config vars.
       *  PAGE_ACCESS_TOKEN
       *  VERIFY_TOKEN
       *  witai_token
-   2. Ubah URL callback Facebook anda ke url dari heroku
+   4. Ubah URL callback Facebook anda ke url dari heroku
 2. Ngrok <br>
    Anda bisa gunakan Ngrok untuk melakukan penerusan/forwarding protokol HTTP. Ikuti [panduan](https://ngrok.com/docs) di bawah ini untuk <em>forward</em> localhost anda ke publik. Ubah URL callback facebook anda ke URL dari ngrok.
    ```
