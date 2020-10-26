@@ -44,7 +44,8 @@
   - [Installation](#installation)
      - [NodeJs](#nodejs)
      - [Git](#git)
-     - [Chat Bot](#messenger)
+     - [Wit.ai](#install_witai)
+     - [Server](#server)
      - [NodeMCU](#nodemcu)
   <!-- - [Configuration](#configuration) -->
   - [Deploy](#deploy)
@@ -317,6 +318,7 @@ git --version
 ```
 https://git-scm.com/download/win
 ```
+
 <a name="nodejs"></a>
 
 B.  NodeJs
@@ -335,9 +337,17 @@ apt-get install -y nodejs
 https://nodejs.org/en/download/
 ```
 
-<a name="messenger"></a>
+<a name="install_witai"></a>
 
-C.  Facebook Messenger
+C. Wit.ai
+1. To get wit.ai token you can follow this [tutorial](https://wit.ai/docs/quickstart).
+```
+https://wit.ai/docs/quickstart
+```
+
+<a name="server"></a>
+
+D.  Server
 #### Prerequisite
 1. Before you use this app, you must register your app in facebook platform. You can follow this tutorial to get PAGE_ACCESS_TOKEN.
 ```
@@ -356,9 +366,11 @@ mv .env.example .env
 npm install
 npm start
 ```
+3. Server configuration is done
+
 <a name="nodemcu"></a>
 
-D.  NodeMCU
+E.  NodeMCU
 
 1. Install Arduino
 ```
