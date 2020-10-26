@@ -96,7 +96,10 @@
   
   ### Wit.ai
   ### Buat aplikasimu
-  Pada bagian ini saya akan menunjukkan bagaimana cara membuat aplikasi untuk mengontrol lampu. Berikut panduan untuk mendapatkan [Wit.ai Token](#witai_token)
+
+  <a name="witai_token"></a>
+
+  Pada bagian ini saya akan menunjukkan bagaimana cara membuat aplikasi untuk mengontrol lampu. Berikut panduan untuk mendapatkan Wit.ai Token
   1. Mendaftarkan akun
    
       Pengguna hanya dapat mendaftarkan akun baru dengan menggunakan akun facebook. Jika belum memiliki akun facebook, silahkan buat akun terlebih dahulu. Kunjungi laman [wit.ai](https://wit.ai) dan buat akun baru dengan memilih “Continue with facebook”.
