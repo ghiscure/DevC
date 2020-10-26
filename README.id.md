@@ -20,8 +20,8 @@
   </p>
 </p>
 
-## Languange
-*Baca ini dalam bahasa lain: [Inggris](README.en.md), [Indonesia](README.id.md).*
+## Bahasa
+*Tersedia dalam bahasa lain: [Inggris](README.en.md), [Indonesia](README.id.md).*
 
 <a name="toc"></a>
 
