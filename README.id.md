@@ -1,4 +1,4 @@
-# Build Chat Bot to Control Your Home
+# Membuat Bot Percakapan Untuk Mengatur Rumah Anda
 
 <!-- PROJECT LOGO -->
 <br />
@@ -7,41 +7,41 @@
   <h3 align="center">ghiscure</h3>
 
   <p align="center">
-    Simple chat bot to control your home
+    bot percakapan simpel untuk mengatur rumah anda
     <br />
-    <a href="https://github.com/ghiscure/DevC#toc"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ghiscure/DevC#toc"><strong>Jelajahi dokumentasi »</strong></a>
     <br />
     <br />
-    <a href="https://m.me/ghiscure">View Demo</a>
+    <a href="https://m.me/ghiscure">Lihat Demo</a>
     ·
-    <a href="https://github.com/ghiscure/DevC/issues">Report Bug</a>
+    <a href="https://github.com/ghiscure/DevC/issues">Laporkan gangguan</a>
     ·
-    <a href="https://github.com/ghiscure/DevC/issues">Request Feature</a>
+    <a href="https://github.com/ghiscure/DevC/issues">Ajukan Fitur</a>
   </p>
 </p>
 
 ## Languange
-*Read this in other languages: [English](README.md), [Indonesian](README.id.md).*
+*Baca ini di bahasa lain: [Inggris](README.md), [Indonesia](README.id.md).*
 
 <a name="toc"></a>
 
-## Table of Contents
-* **[Introduction](#introduction)**
-* **[Smart Home Unit and Component](#smarthome)**
-* **[System Configuration](#system)**
-* **[Chatbot as Control System](#chatbot)**
+## Daftar Isi
+* **[Pengenalan](#introduction)**
+* **[<em>Smart Home</em> dan komponennya](#smarthome)**
+* **[Konfigurasi sistem](#system)**
+* **[Bot percakapan sebagai sistem kontrol](#chatbot)**
   - [Facebook Messenger](#messenger)
   - [Wit.ai](#wit.ai)
-* **[Communication](#communication)**
+* **[Komunikasi](#communication)**
   - [API](#api)
   - [MQTT](#mqtt)
-* **[How it works](#works)**
+* **[Bagaimana sistem ini bekerja](#works)**
   - [Facebook Messenger](#facebook_messenger)
   - [Wit.ai](#Wit_ai)
   - [NodeMCU](#node_mcu)
   
-* **[How To Use](#howtouse)**
-  - [Installation](#installation)
+* **[Cara penggunaan](#howtouse)**
+  - [Instalasi](#installation)
      - [NodeJs](#nodejs)
      - [Git](#git)
      - [Chat Bot](#messenger)
@@ -50,27 +50,27 @@
   - [Deploy](#deploy)
       - [Heroku](#heroku)
       - [Ngrok](#ngrok)
-* **[License](#project-license)** 
+* **[Lisensi](#project-license)** 
   
-<!-- Introduction -->
+<!-- Pengenalan -->
 <a name="introduction"></a>
-## Introduction
+## Pengenalan
 
 
-<!-- Smart Home -->
+<!-- rumah cerdas -->
 <a name="smarthome"></a>
-## Smart Home Unit and Component
+## <emp>Smart Home</emp> dan komponennya
 
 
-<!-- System Configurantion -->
+<!-- Konfigurasi Sistem -->
 <a name="system"></a>
-## System Configuration
-![System Configuration](./Documentation/img/System.png)
+## Konfigurasi Sistem
+![Konfigutasi sistem](./Documentation/img/System.png)
 
 
-<!-- Chatbot -->
+<!-- Bot Percakapan -->
 <a name="chatbot"></a>
-## Chatbot as Control System
+## Bot percakapan sebagai sistem kontrol
 
   <a name="mesenger"></a>
 
@@ -79,8 +79,8 @@
   <a name="wit.ai"></a>
   
   ### [wit.ai](#)
-  ### Build Your APP
-  On this section i will show you how to build an app to control lamp.
+  ### Buat aplikasimu
+  Pada bagian ini saya akan menunjukkan bagaimana cara membuat aplikasi untuk mengontrol lampu.
 
 
 <a name="communication"></a>
@@ -102,27 +102,27 @@
 
 <a name="works"></a>
 
-## How it works
+## Bagaimana Ini Bekerja
 
 <a name="facebook_messenger"></a>
 
 A. Facebook Messenger
-1. Received text message from user and send it to wit.ai
+1. Menerima teks pesan dari pengguna dan mengirimkannya ke wit.ai
    ```js
    if (received_message.text) {
       
-      // Send text to wit.ai and get response
+      // Mengirimkan teks ke wit.ai dan mendapatkan respon
       var result = await getMessage(received_message.text)
       var caps= `turning ${result[0][0]} the ${result[1][0]}`
 
-      // Send command to user
+      // Kirimkan perintah kepada user
       response = {
         "text": caps
       }
       callSendAPI(sender_psid, response);
 
 
-      //send result to MQTT Broker and NodeMCU
+      //kirim hasil ke broker MQTT dan NodeMCU
       var topic = `esp8266/ghiscure/${result[1][0]}` 
       if(result[0][0]=='on'){
       listen.publish(topic, "1");
@@ -134,15 +134,15 @@ A. Facebook Messenger
       
     } 
    ```
-2. Received voice notes from user and send it to wit.ai
+2. Menerima pesan suara dari pengguna dan mengirimkannya ke wit.ai
    ```js
    else if (received_message.attachments[0].type=="audio") {
       console.log('audio')
       
-      // Get the URL of the message attachment
+      // Dapatkan URL dari lampiran pesan
       let attachment_url = received_message.attachments[0].payload.url;
       
-    // Convert voice notes to mp3
+    // konversi pesan suara ke mp3
      var result = await fetch(attachment_url)
      proc = new ffmpeg({source:result.body})
      proc.setFfmpegPath('ffmpeg')
@@ -150,11 +150,11 @@ A. Facebook Messenger
           return "success"
      })
 
-     // Send mp3 to wit.ai
+     // Kirim mp3 ke wit.ai
     var mimetype_ = "audio/mpeg3"
      var readStream = fs.createReadStream("output.mp3")
 
-     // Get Result from wit.ai
+     // Dapatkan hasil dari wit.ai
      result = await getMessagefromAudio(readStream, mimetype_)
      console.log(result)
      var caps= `turning ${result[0][0]} the ${result[1][0]}`
@@ -162,7 +162,7 @@ A. Facebook Messenger
       "text": caps
     }
 
-    // send result to MQTT Broker and NodeMCU
+    // Kirimkan hasil ke broker MTQQ dan NodeMCU
      callSendAPI(sender_psid, response);
      if(result[0][0]=='on'){
        listen.publish(topic, "1");
@@ -177,9 +177,9 @@ A. Facebook Messenger
 
 B. Wit.ai
 
-1. Get Message from text parameter
+1. Dapatkan pesan dari parameter text
 ```js
-    // This function use for get response from wit.ai. This function require a string parameter
+    // fungsi ini digunakan untuk mendapatkan respon dari wit.ai. fungsi ini membutuhkan string sebagai parameternya
       getMessage: async function(query){
     var url =`https://api.wit.ai/message?v=20201020&q=${encodeURI(query)}` 
 
@@ -191,11 +191,11 @@ B. Wit.ai
     var json_data = await response.json()
     try {
 
-      // Get Command Value
+      // Dapatkan nilai perintah
       var cmd_value =json_data.traits.wit$on_off[0].value
       var cmd_confidence = json_data.traits.wit$on_off[0].confidence
 
-      // Get Object Value
+      // Dapatkan nilai objek
       var object_value = json_data.entities['object:object'][0].value
       var object_confidence = json_data.entities['object:object'][0].confidence
 
@@ -208,12 +208,10 @@ B. Wit.ai
     
   }
 ```
-
-
   
-2. Get Message from voice notes
+2. Dapatkan pesan dari pesan suara
 ```js
-    // This function use for get response from wit.ai. This function require a audio file as parameter
+    // Fungsi ini digunakan untuk mendapatkan respon dari wit.ai. fungsi ini membutuhkan string sebagai parameternya
       getMessagefromAudio: async function(bin_data, mimetype_){
     var options = {
         method: 'POST',
@@ -226,15 +224,15 @@ B. Wit.ai
       }
     var url =`https://api.wit.ai/speech?v=20200513` 
     try {
-        // Get response from wit.ai
+        // Dapatkan respon dari wit.ai
       var response = await fetch(url, options)
       var json_data = await response.json()
       
-      // Get Command Value
+      // Dapatkan nilai perintah
       var cmd_value =json_data.traits.wit$on_off[0].value
       var cmd_confidence = json_data.traits.wit$on_off[0].confidence
 
-      // Get Object Value
+      // Dapatkan nilai objek
       var object_value = json_data.entities['object:object'][0].value
       var object_confidence = json_data.entities['object:object'][0].confidence
 
@@ -251,82 +249,82 @@ B. Wit.ai
 <a name="node_mcu"></a>
 
 C. NodeMCU
-1. Received data from MQTT Broker and Turn on/off the lamp
+1. Terima data dari broker MTQQ dan menyalakan/mematikan lampu
 ```c
 
-// If a message is received on the topic esp8266/ghiscure/AC, you check if the message is either 1 or 0. Turns the ESP GPIO according to the message
+// Jika pesan diterima di topik esp8266/ghiscure/AC, silahkan anda cek apakah pesannya bernilai 1 atau 0. ubah ESP GPIO menurut pesan yang diterima
 
   if(topic=="esp8266/ghiscure/AC"){
       Serial.print("Changing GPIO 4 to ");
       if(messageTemp == "1"){
-        digitalWrite(ledGPIO4, HIGH); //Turn on AC
+        digitalWrite(ledGPIO4, HIGH); //Nyalakan AC
         Serial.print("On");
       }
       else if(messageTemp == "0"){
-        digitalWrite(ledGPIO4, LOW); //Turn off AC
+        digitalWrite(ledGPIO4, LOW); //Matikan AC
         Serial.print("Off");
       }
   }
-    // If a message is received on the topic esp8266/ghiscure/lamp, you check if the message is either 1 or 0. Turns the ESP GPIO according to the message
+// Jika pesan diterima pada topik esp8266/ghiscure/lamp, silahkan cek apakah pesannya bernilai 1 atau 0. Ubah ESP GPIO menurut pesan yang diterima
 
   if(topic=="esp8266/ghiscure/lamp"){
       Serial.print("Changing GPIO 5 to ");
       if(messageTemp == "1"){
-        digitalWrite(ledGPIO5, HIGH); // turn on lamp
+        digitalWrite(ledGPIO5, HIGH); // nyalakan lampu
         Serial.print("On");
       }
       else if(messageTemp == "0"){
-        digitalWrite(ledGPIO5, LOW); //turn off lamp
+        digitalWrite(ledGPIO5, LOW); //matikan lampu
         Serial.print("Off");
       }
   }
 ```
 
-2. Subscribe topic
+2. Langganan Topik
 ```c
-// You need to add subscribe function to get message from spesific topic
+// Anda perlu menambahkan fungsi langganan untuk mendapatkan pesan dari topik tertentu
 client.subscribe("esp8266/ghiscure/AC");
 client.subscribe("esp8266/ghiscure/lamp");
 ```
 
 <a name="howtouse"></a>
 
-## How to Use
+## Cara Penggunaan
 
 
 <a name="installation"></a>
 
-### Installation
+### Instalasi
 
 <a name="git"></a>
 
 A.  Git
-1. Start by updating the package index
+1. Mulai dengan memperbarui package index
 ```bash
 sudo apt update
 ```
-2. Run the following command to install Git:
+2. Jalankan perintah di bawah untuk memasang Git:
 ```bash
 sudo apt install git
 ```
-3. Verify the installation by typing the following command which will print the Git version:
+3. verifikasi pemasangan dengan menulis perintah berikut yang akan menuliskan versi dari Git:
 ```bash
 git --version
 ```
-4. Windows Installations
+4. Pemasangan pada Windows
 ```
 https://git-scm.com/download/win
 ```
 <a name="nodejs"></a>
 
 B.  NodeJs
-1. Debian Based
+1. Berbasis Debian
 ```sh
-# Using Ubuntu
+# Menggunakan Ubuntu
 curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-# Using Debian, as root
+# Menggunakan Debian, sebagai root
 curl -sL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 ```
@@ -338,21 +336,21 @@ https://nodejs.org/en/download/
 <a name="messenger"></a>
 
 C.  Facebook Messenger
-#### Prerequisite
-1. Before you use this app, you must register your app in facebook platform. You can follow this tutorial to get PAGE_ACCESS_TOKEN.
+#### Prasyarat
+1. Sebelum menggunakan aplikasi ini, anda perlu mendaftarkan aplikasi anda di platform facebook. Anda dapat mengikuti tata cara ini untuk mendapatkan PAGE_ACCESS_TOKEN.
 ```
 https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
 ```
-There are 4 items that you must pay attention
+Ada 4 hal yang harus anda perhatikan
 ![Facebook](./Documentation/img/facebook.png)
 
 
-2. After you have PAGE_ACCESS_TOKEN, just follow this step
+2. Setelah anda mendapatkan PAGE_ACCESS_TOKEN, ikuti langkah berikut
 ```bash
 git clone https://github.com/ghiscure/DevC
 cd DevC
 mv .env.example .env
-#Edit .env with your app credentials
+# Ubah .env dengan kredensial aplikasi anda
 npm install
 npm start
 ```
@@ -360,45 +358,45 @@ npm start
 
 D.  NodeMCU
 
-1. Install Arduino
+1. Pasang Aplikasi Arduino
 ```
 https://www.arduino.cc/en/main/software
 ```
-2. Install NodeMCU board in Arduino
+2. Pasang papan NodeMCU di Arduino
 ```
 https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 ```
-3. Wiring Schematic
+3. Skema pengkabelan
 ```
 Image
 ```
-4. Edit config of wireless connection
+4. Ubah konfigurasi dari koneksi nirkabel
 ```c
-// Change the credentials below, so your ESP8266 connects to your router
-const char* ssid = ""; // your ssid name
+// ubah kredensial di bawah agar ESP8266 milik anda dapat terkoneksi ke router 
+const char* ssid = ""; // nama ssid anda
 const char* password = ""; // password ssid
 ```
-5. Upload file to NodeMCU
+5. Unggah berkas ke NodeMCU
 
-![Upload to NodeMCU](./Documentation/img/upload_nodemcu.png)
+![Unggah ke NodeMCU](./Documentation/img/upload_nodemcu.png)
 
 ### Deploy
 1. Heroku
-   1. You can use this tutorial to deploy app
+   1. Anda bisa gunakan tata cara ini untuk men-deploy aplikasi
    ```
    https://devcenter.heroku.com/articles/deploying-nodejs
    ```
-   2. You must edit environment variable. You can use this tutorial to edit env variable. 
+   1. Anda harus mengubah environment variable. Anda bisa gunakan tata cara ini untuk mengedit variable env. 
    ```
    https://devcenter.heroku.com/articles/config-vars
    ```
-   3. There are 3 environment variable that you must set in config vars.
+   1. Terdapat 3 environment variable yang harus diatur dalam config vars.
       *  PAGE_ACCESS_TOKEN
       *  VERIFY_TOKEN
       *  witai_token
-   4. Change your URL callback in facebook account
+   2. Ubah URL callback anda di akun facebook 
 2. Ngrok <br>
-   You can use ngrok to forwarding http protocol. Follow this tutorial to forward your localhost to public. Change your Facebook's URL callback to ngrok url.
+   Anda bisa gunakan Ngrok untuk melakukan penerusan/forwarding protokol HTTP. Ikuti tata cara di bawah ini untuk meneruskan localhost anda kepada publik. Ubah URL facebook anda ke URL Ngrok.
    ```
    https://ngrok.com/docs
    ```
@@ -409,4 +407,4 @@ const char* password = ""; // password ssid
 <a name="project-license"></a>
 
 ## License
-Usage is provided under the [MIT License](http://opensource.org/licenses/mit-license.php). See LICENSE for the full details.
+Penggunaan disediakan di bawah [Lisensi MIT](http://opensource.org/licenses/mit-license.php). Lihat LISENSI untuk detail lengkap.
