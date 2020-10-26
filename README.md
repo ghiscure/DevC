@@ -55,22 +55,35 @@
   
 <!-- Introduction -->
 <a name="introduction"></a>
+
 ## Introduction
+On this day, most of people using gadget to support their activity. Te development of computer and embedded devices make poeple can control other devices with their smartphone over internet. This things called Internet of Things. Example application of Internet of Things is smart home.
+
+In this repository we will design a smart home system that integrate Chat bot to control electronic devices. Message fro user recognized by chat bot, and that command will be forward to electronic devices. User can control their electronic devices anytime and anywhere. 
 
 
 <!-- Smart Home -->
 <a name="smarthome"></a>
+
 ## Smart Home Unit and Component
+In IoT there are 3 important things => node, gateaway and server. Node is the edges devices that have function to be a input or ouput. Example of nodes are Lamp, Air Conditioner, Pump, Selenium Door. Gateaway is a connector between server and node. Gateaway can be a microcontroller or mini computer. This is components needed in this tutorial
+1. LED
+2. Breadboard
+3. Infrared
+4. NodeMCU (ESP8266)
+5. Jumper
 
 
 <!-- System Configurantion -->
 <a name="system"></a>
+
 ## System Configuration
 ![System Configuration](./Documentation/img/System.png)
 
 
 <!-- Chatbot -->
 <a name="chatbot"></a>
+
 ## Chatbot as Control System
 
   <a name="mesenger"></a>
@@ -83,17 +96,17 @@
   ### Wit.ai
   ### Build Your APP
   On this section i will show you how to build an app to control lamp.
-  1. For intermezzon you can follow this [tutorial](https://wit.ai/docs/)
+  1. For intermezzo you can follow this [tutorial](https://wit.ai/docs/)
   2. After you create account you can check this gif
   ![Alt Text](./Documentation/gif/en.gif)
-  3. There is 4 important things in wit.ai
+  3. There are 4 important things in wit.ai
      - Utterance
      - Intent
      - Entity
      - Trait
   4. To improve the detection you need train your app. Just add Utterance and labelling it. After that wit.ai will train your data set
 
-<a name="communication"></a>
+<!-- <a name="communication"></a> -->
 
 <!-- ## Communcation
   <a name="api"></a>
@@ -103,11 +116,6 @@
   <a name="mqtt"></a>
   
   ### MQTT -->
-
-
-
-
-
 
 
 <a name="works"></a>
@@ -219,8 +227,6 @@ B. Wit.ai
   }
 ```
 
-
-  
 2. Get Message from voice notes
 ```js
     // This function use for get response from wit.ai. This function require a audio file as parameter
@@ -261,7 +267,7 @@ B. Wit.ai
 <a name="node_mcu"></a>
 
 C. NodeMCU
-1. Received data from MQTT Broker and Turn on/off the lamp
+1. Received data from MQTT Broker and Turn on/off the lamp/AC
 ```c
 
 // If a message is received on the topic esp8266/ghiscure/AC, you check if the message is either 1 or 0. Turns the ESP GPIO according to the message
