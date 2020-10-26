@@ -400,8 +400,14 @@ npm start
 D.  NodeMCU
 
 1. Pasang Aplikasi [Arduino](https://www.arduino.cc/en/main/software)
+```
+https://www.arduino.cc/en/main/software
+```
 2. Pasang [<em>Board</em> NodeMCU](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/) di Arduino
-3. Skema Pemasangan
+```
+https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
+```
+1. Skema Pemasangan
 ![Skematik](Documentation/img/schmatic.jpg)
 4. Ubah konfigurasi username dan password yang anda punya
 ```c
