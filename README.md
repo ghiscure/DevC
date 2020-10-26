@@ -21,7 +21,7 @@
 </p>
 
 ## Languange
-*Read this in other languages: [English](README.md), [Indonesian](README.id.md).*
+*Read this in other languages: [English](README.en.md), [Indonesian](README.id.md).*
 
 <a name="toc"></a>
 

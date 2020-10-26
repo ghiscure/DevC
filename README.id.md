@@ -21,7 +21,7 @@
 </p>
 
 ## Languange
-*Baca ini dalam bahasa lain: [Inggris](README.md), [Indonesia](README.id.md).*
+*Baca ini dalam bahasa lain: [Inggris](README..en.md), [Indonesia](README.id.md).*
 
 <a name="toc"></a>
 
