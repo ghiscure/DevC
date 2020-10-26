@@ -21,7 +21,7 @@
 </p>
 
 ## Languange
-*Baca ini di bahasa lain: [Inggris](README.md), [Indonesia](README.id.md).*
+*Baca ini dalam bahasa lain: [Inggris](README.md), [Indonesia](README.id.md).*
 
 <a name="toc"></a>
 
@@ -44,7 +44,8 @@
   - [Instalasi](#installation)
      - [NodeJs](#nodejs)
      - [Git](#git)
-     - [Chat Bot](#messenger)
+     - [Wit.ai](#instalasi_witai)
+     - [Server](#server)
      - [NodeMCU](#nodemcu)
   <!-- - [Configuration](#configuration) -->
   - [Deploy](#deploy)
@@ -75,15 +76,25 @@
   <a name="mesenger"></a>
 
   ### Facebook Messenger
+  Facebook messenger digunakan untuk menerima pesan dari user. Pesan tersebut dapat berupa pesan suara maupun pesan teks. Untuk pembuatan messenger anda dapat mengikuti panduan berikut
+  1. Membuat akun [facebook](https://facebook.com)
+  2. Membuat [pages](https://www.facebook.com/pages/create) facebook 
+  3. Membuat applikasi pada [<em>Dashboard Facebook</em>](https://developers.facebook.com/apps/)
+  4. Ada 4 hal yang harus anda perhatikan
+      - Generate Token. Token tersebut akan digunakan untuk konfigurasi pada server
+      - Callback URL. URL tersebut akan digunakan untuk konfigurasi pada server
+      - Verify Token. Verify Token terserah anda. Verify token nantinya akan digunakan untuk konfigurasi server
+      - Ijinkan layanan messages untuk dapat menggunakannya.
+![Facebook](./Documentation/img/facebook.png)
   
   <a name="wit.ai"></a>
   
-  ### [wit.ai](#)
+  ### Wit.ai
   ### Buat aplikasimu
   Pada bagian ini saya akan menunjukkan bagaimana cara membuat aplikasi untuk mengontrol lampu.
 
 
-<a name="communication"></a>
+<!-- <a name="communication"></a>
 
 ## Communcation
   <a name="api"></a>
@@ -92,7 +103,7 @@
   
   <a name="mqtt"></a>
   
-  ### MQTT
+  ### MQTT -->
 
 
 
@@ -280,7 +291,7 @@ C. NodeMCU
   }
 ```
 
-2. Langganan Topik
+2. <em>Subscribe</em> Topik
 ```c
 // Anda perlu menambahkan fungsi langganan untuk mendapatkan pesan dari topik tertentu
 client.subscribe("esp8266/ghiscure/AC");
@@ -299,7 +310,7 @@ client.subscribe("esp8266/ghiscure/lamp");
 <a name="git"></a>
 
 A.  Git
-1. Mulai dengan memperbarui package index
+1. Mulai dengan memperbarui package
 ```bash
 sudo apt update
 ```
@@ -341,8 +352,7 @@ C.  Facebook Messenger
 ```
 https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
 ```
-Ada 4 hal yang harus anda perhatikan
-![Facebook](./Documentation/img/facebook.png)
+
 
 
 2. Setelah anda mendapatkan PAGE_ACCESS_TOKEN, ikuti langkah berikut
