@@ -57,11 +57,17 @@
 <!-- Pengenalan -->
 <a name="introduction"></a>
 ## Pengenalan
+Di tengah mobilitas aktivitas yang tinggi, gadget menjadi perangkat penting untuk mendukung kinerja. Berkembangnya kemampuan komputer dan sistem tertanam memungkinkan pengguna untuk menghubungkan smartphone dengan perangkat lain secara remote melalui jaringan internet. Hal ini dikenal sebagai internet of things (IoT). Salah satu penerapan IoT paling sederhana adalah smart home karena mudah dihubungkan dengan jaringan internet (wifi, 4G).
+
+Dalam tutorial ini, kita akan mendesain perangkat smart home yang dilengkapi oleh chatbot sebagai asisten dalam operasional perangkat elektronik. Pengguna dapat mengendalikan perangkat rumah melalui pesan singkat yang dikirimkan ke chatbot. Chatbot bertugas mengenali perintah untuk selanjutnya diubah menjadi instruksi dalam level device
 
 
 <!-- rumah cerdas -->
 <a name="smarthome"></a>
 ## <emp>Smart Home</emp> dan komponennya
+Smart home merupakan salah satu penerapan IoT di lingkungan tempat tinggal. IoT memiliki infrastruktur yang terdiri dari node, gateway, web app server. Node mencakup setiap device yang digunakan sebagai input dan output dari sistem. Pada smart home yang termasuk node adalah sebagian besar perangkat elektronik contohnya lampu, ac, tv dll. Kerja node dikendalikan oleh gateway. Node bekerja sesuai dengan instruksi program yang ditulis pada gateway. 
+
+
 
 
 <!-- Konfigurasi Sistem -->
