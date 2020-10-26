@@ -32,9 +32,9 @@
 * **[Chatbot as Control System](#chatbot)**
   - [Facebook Messenger](#messenger)
   - [Wit.ai](#wit.ai)
-* **[Communication](#communication)**
+<!-- * **[Communication](#communication)**
   - [API](#api)
-  - [MQTT](#mqtt)
+  - [MQTT](#mqtt) -->
 * **[How it works](#works)**
   - [Facebook Messenger](#facebook_messenger)
   - [Wit.ai](#Wit_ai)
@@ -76,24 +76,33 @@
   <a name="mesenger"></a>
 
   ### Facebook Messenger
+  Facebook Messenger is used for connecting server and user. To getting started you can follow this [tutorial](https://developers.facebook.com/docs/messenger-platform/)
   
   <a name="wit.ai"></a>
   
-  ### [wit.ai](#)
+  ### Wit.ai
   ### Build Your APP
   On this section i will show you how to build an app to control lamp.
-
+  1. For intermezzon you can follow this [tutorial](https://wit.ai/docs/)
+  2. After you create account you can check this gif
+  ![Alt Text](./Documentation/gif/en.gif)
+  3. There is 4 important things in wit.ai
+     - Utterance
+     - Intent
+     - Entity
+     - Trait
+  4. To improve the detection you need train your app. Just add Utterance and labelling it. After that wit.ai will train your data set
 
 <a name="communication"></a>
 
-## Communcation
+<!-- ## Communcation
   <a name="api"></a>
   
   ### API
   
   <a name="mqtt"></a>
   
-  ### MQTT
+  ### MQTT -->
 
 
 
