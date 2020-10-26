@@ -81,9 +81,13 @@
   2. Membuat [pages](https://www.facebook.com/pages/create) facebook 
   3. Membuat applikasi pada [<em>Dashboard Facebook</em>](https://developers.facebook.com/apps/)
   4. Ada 4 hal yang harus anda perhatikan
+   
+      <a name="page_access_token"></a>
       - Generate Token. Token tersebut akan digunakan untuk konfigurasi pada server
+      <a name="callback_url"></a>
       - Callback URL. URL tersebut akan digunakan untuk konfigurasi pada server
-      - Verify Token. Verify Token terserah anda. Verify token nantinya akan digunakan untuk konfigurasi server
+      <a name="verify_token"></a>
+      - Verify Token. Verify Token dapat diisi sesuka hati anda. Verify token nantinya akan digunakan untuk konfigurasi server
       - Ijinkan layanan messages untuk dapat menggunakannya.
 ![Facebook](./Documentation/img/facebook.png)
   
@@ -344,18 +348,14 @@ apt-get install -y nodejs
 https://nodejs.org/en/download/
 ```
 
-<a name="messenger"></a>
+<a name="server"></a>
 
-C.  Facebook Messenger
+C.  Server
 #### Prasyarat
-1. Sebelum menggunakan aplikasi ini, anda perlu mendaftarkan aplikasi anda di platform facebook. Anda dapat mengikuti tata cara ini untuk mendapatkan PAGE_ACCESS_TOKEN.
-```
-https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
-```
+* Mempunyai [PAGE_ACCESS_TOKEN](#page_access_token).
+* Mempunyai [Wit.ai_Token](#witai_token)
 
-
-
-2. Setelah anda mendapatkan PAGE_ACCESS_TOKEN, ikuti langkah berikut
+Ikuti panduan berikut untuk menjalankan server: 
 ```bash
 git clone https://github.com/ghiscure/DevC
 cd DevC
@@ -377,10 +377,9 @@ https://www.arduino.cc/en/main/software
 https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 ```
 3. Skema pengkabelan
-```
-Image
-```
-4. Ubah konfigurasi dari koneksi nirkabel
+![Skematik](Documentation/img/schmatic.jpg)
+
+4. Ubah konfigurasi username dan password yang anda punya
 ```c
 // ubah kredensial di bawah agar ESP8266 milik anda dapat terkoneksi ke router 
 const char* ssid = ""; // nama ssid anda
@@ -412,7 +411,16 @@ const char* password = ""; // password ssid
    ```
 
 
+<a name="Referensi"></a>
 
+## Referensi
+
+1. [ESP32 MQTT – Publish and Subscribe with Arduino IDE](https://randomnerdtutorials.com/esp32-mqtt-publish-subscribe-arduino-ide/)
+2. [Getting Started with Messenger Platfrom](https://developers.facebook.com/docs/messenger-platform/)
+3. [Build Your First Wit App](https://wit.ai/docs/quickstart)
+4. [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/deploying-nodejs)
+5. [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars)
+6. [Expose a local web server to the internet](https://ngrok.com/docs)
 
 <a name="project-license"></a>
 
