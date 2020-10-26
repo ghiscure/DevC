@@ -340,6 +340,9 @@ Before you use this app, you must register your app in facebook platform. You ca
 ```
 https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
 ```
+There are 4 items that you must pay attention
+![Facebook](./Documentation/img/facebook.png)
+
 
 After you have PAGE_ACCESS_TOKEN, just follow this step
 ```bash
