@@ -3,7 +3,7 @@ we intend to make a smart home without troubling our users by forcing them to in
 ## What it does
 This bot enables user to control their electronic devices from afar just by sending message through social media messenger.
 ## How we built it
-We use messenger platfrom from facebook to receive command/message from user. After the message is received, then the message is forwarded into wit.ai to be recognized
+We use messenger platfrom from facebook to receive command/message from user. After the message is received, then the message is forwarded into wit.ai to be recognized. Messages from wit.ai will be forward to MQTT Broker. Electronic devices will get command from MQTT Broker, these command based on response from wit.ai.
 ## Challenges we ran into
 To make a dynamic bot, it requires a large dataset for the training. With limited time and resources, we were not able to achieve that. Also, because of limited hardware, we were only using LED for the demo.
 ## Accomplishments that we're proud of
