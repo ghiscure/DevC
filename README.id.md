@@ -95,7 +95,37 @@
   
   ### Wit.ai
   ### Buat aplikasimu
-  Pada bagian ini saya akan menunjukkan bagaimana cara membuat aplikasi untuk mengontrol lampu.
+  Pada bagian ini saya akan menunjukkan bagaimana cara membuat aplikasi untuk mengontrol lampu. Berikut panduannya:
+  1. Mendaftarkan akun
+   
+      Pengguna hanya dapat mendaftarkan akun baru dengan menggunakan akun facebook. Jika belum memiliki akun facebook, silahkan buat akun terlebih dahulu. Kunjungi laman [wit.ai](https://wit.ai) dan buat akun baru dengan memilih “Continue with facebook”.
+  2. Buat aplikasi wit baru
+
+      Untuk membuat aplikasi wit baru, klik tombol “New App” yang ada di bagian atas halaman awal akun anda. Kemudian isi nama aplikasi serta bahasa yang nantinya akan digunakan oleh aplikasi. Jika sudah, tekan tombol “Create”, maka anda akan dibawa ke halaman aplikasi baru anda yang juga merupakan halaman “understanding” dari aplikasi.
+  3. Latih aplikasi milik anda
+   
+      Aplikasi wit ini nantinya akan membantu untuk memahami instruksi yang diberikan user pada aplikasi melalui chatting. wit bekerja dengan cara menerima dan memahami masukan dari user yang berupa kata atau kalimat (utterance), kemudian wit akan berusaha memahaminya untuk kemudian memberikan sebuah keluaran berupa respon yang paling sesuai dengan keinginan pengguna berdasarkan masukan tadi. 
+
+      ![Alt Text](./Documentation/gif/id.gif)
+
+      Agar wit dapat memahami masukan dari user, anda perlu melatih aplikasi yang barusan anda buat. Cara melatihnya adalah dengan memberikan wit beberapa ujaran beserta intent yang diinginkan dari ujaran-ujaran tersebut. Masukkan ujaran pada kolom “utterance” kemudian pilih atau buat respon pada pilihan “intent”. Misalkan anda memasukkan “tolong nyalakan lampu?” sebagai ujaran dan “perintah” sebagai “intent”, lampu sebagai “entity object” dan “wit/on_off” sebagai “trait”. setelah selesai, pilih “Train and Validate” untuk menjadwalkan aplikasi anda untuk berlatih berdasarkan ujaran dan kehendak yang anda masukkan tadi. setelah aplikasi sudah selesai dilatih, maka aplikasi nantinya dapat memahami ujaran dari user dan memberikan kehendak yang sesuai.
+  4. Tingkat kualitas pengenalan kata
+  
+      Untuk meningkatkan kualitas deteksi dari aplikasi, anda bisa memberikan beberapa versi ujaran untuk kehendak yang sama. dengan begitu aplikasi wit akan semakin mudah dalam mengenali ujaran-ujaran berbeda yang diberikan oleh pengguna dan memberikan kehendak yang sesuai.
+  5. Lakukan query pada applikasi
+  
+      Setelah melatih aplikasi wit, anda bisa memulai untuk melakukan query terhadap aplikasi melalui wit.ai API. Untuk melakukannya masuk ke setting aplikasi melalui menu management yang ada di sebelah kiri halaman aplikasi anda. masukan contoh ujaran pada kolom HTTP API yang nantinya anda akan diberikan sebuah cURL yang dapat anda buka di terminal. cURL tersebut nantinya akan memberikan hasil dari aplikasi wit terkait ujaran yang anda berikan sebelumnya. hasil yang diberikan adalah sebuah JSON file yang berisi hal-hal berikut:
+
+      * Text
+      * Intents
+      * Entity
+      * Traits
+  6. Lengkapi intent
+  
+    Setelah mencoba query dan anda menemukan beberapa kehendak yang tidak sesuai dengan ujaran yang diberikan, anda dapat kembali ke bagian awal atau understanding dengan menekan bagian “understanding” yang ada di sebelah kiri halaman. di halaman understanding anda akan menemukan query yang anda masukkan tadi. anda dapat mencari query mana yang kehendaknya tidak sesuai dan memberikannya kehendak yang baru yang lebih sesuai.
+  7. Buat entitas
+
+    Pada file JSON yang anda dapatkan sebelumnya anda mendapatkan pula sebuah “entities” yang sebelumnya masih kosong. Anda bisa mulai untuk memberikan entitas kepada setiap ujaran yang anda miliki untuk melatih aplikasi wit lebih jauh lagi. pilih ujaran yang diinginkan, highlight atau blok bagian dari ujaran yang nantinya berperan penting pada kehendak yang dikeluarkan, misalnya nilai suhu pada ujaran untuk mengubah suhu ac, atau kata mati/nyala pada ujaran mematikan/menyalakan lampu. nantinya akan muncul sebuah dropdown berisi entities. anda dapat membuat sendiri entitasnya atau menggunakan entitas yang sudah disediakan oleh wit. setelah memilih entitas, klik “Train and Validate” untuk melatih aplikasi agar nantinya juga dapat memberikan entitas dalam keluarannya.
 
 
 <!-- <a name="communication"></a>
