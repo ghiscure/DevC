@@ -59,7 +59,7 @@
 ## Introduction
 On this day, most of people using gadget to support their activity. The development of computer and embedded devices make poeple can control other devices with their smartphone over internet. This is called Internet of Things. For example application of Internet of Things is smart home.
 
-In this repository we will design a smart home system that integrate Chat bot to control electronic devices. Message from user recognized by chat bot, and that command will be forward to electronic devices. User can control their electronic devices anytime and anywhere. 
+In this repository we will design a smart home system that integrate with Chat bot to control electronic devices. Message from user recognized by chat bot, and that command will be forward to electronic devices. User can control their electronic devices anytime and anywhere. 
 
 
 <!-- Smart Home -->
