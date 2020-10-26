@@ -51,6 +51,7 @@
   - [Deploy](#deploy)
       - [Heroku](#heroku)
       - [Ngrok](#ngrok)
+* **[Reference](#reference)** 
 * **[License](#project-license)** 
   
 <!-- Introduction -->
@@ -396,9 +397,7 @@ https://www.arduino.cc/en/main/software
 https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 ```
 3. Wiring Schematic
-```
-Image
-```
+![Schematic](Documentation/img/schmatic.jpg)
 4. Edit config of wireless connection
 ```c
 // Change the credentials below, so your ESP8266 connects to your router
@@ -431,7 +430,16 @@ const char* password = ""; // password ssid
    ```
 
 
+<a name="reference"></a>
 
+## Reference
+
+1. [ESP32 MQTT – Publish and Subscribe with Arduino IDE](https://randomnerdtutorials.com/esp32-mqtt-publish-subscribe-arduino-ide/)
+2. [Getting Started with Messenger Platfrom](https://developers.facebook.com/docs/messenger-platform/)
+3. [Build Your First Wit App](https://wit.ai/docs/quickstart)
+4. [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/deploying-nodejs)
+5. [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars)
+6. [Expose a local web server to the internet](https://ngrok.com/docs)
 
 <a name="project-license"></a>
 
