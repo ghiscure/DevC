@@ -368,17 +368,10 @@ npm start
 
 D.  NodeMCU
 
-1. Pasang Aplikasi Arduino
-```
-https://www.arduino.cc/en/main/software
-```
-2. Pasang papan NodeMCU di Arduino
-```
-https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
-```
-3. Skema pengkabelan
+1. Pasang Aplikasi [Arduino](https://www.arduino.cc/en/main/software)
+2. Pasang [<em>Board</em> NodeMCU](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/) di Arduino
+3. Skema Pemasangan
 ![Skematik](Documentation/img/schmatic.jpg)
-
 4. Ubah konfigurasi username dan password yang anda punya
 ```c
 // ubah kredensial di bawah agar ESP8266 milik anda dapat terkoneksi ke router 
@@ -391,11 +384,11 @@ const char* password = ""; // password ssid
 
 ### Deploy
 1. Heroku
-   1. Anda bisa gunakan tata cara ini untuk men-deploy aplikasi
+   1. Anda bisa gunakan [panduan](https://devcenter.heroku.com/articles/deploying-nodejs) ini untuk men-deploy aplikasi
    ```
    https://devcenter.heroku.com/articles/deploying-nodejs
    ```
-   1. Anda harus mengubah environment variable. Anda bisa gunakan tata cara ini untuk mengedit variable env. 
+   1. Anda harus mengubah environment variable. Anda bisa gunakan [panduan](https://devcenter.heroku.com/articles/config-vars) ini untuk mengedit variable env. 
    ```
    https://devcenter.heroku.com/articles/config-vars
    ```
@@ -403,9 +396,9 @@ const char* password = ""; // password ssid
       *  PAGE_ACCESS_TOKEN
       *  VERIFY_TOKEN
       *  witai_token
-   2. Ubah URL callback anda di akun facebook 
+   2. Ubah URL callback Facebook anda ke url dari heroku
 2. Ngrok <br>
-   Anda bisa gunakan Ngrok untuk melakukan penerusan/forwarding protokol HTTP. Ikuti tata cara di bawah ini untuk meneruskan localhost anda kepada publik. Ubah URL facebook anda ke URL Ngrok.
+   Anda bisa gunakan Ngrok untuk melakukan penerusan/forwarding protokol HTTP. Ikuti [panduan](https://ngrok.com/docs) di bawah ini untuk <em>forward</em> localhost anda ke publik. Ubah URL callback facebook anda ke URL dari ngrok.
    ```
    https://ngrok.com/docs
    ```
