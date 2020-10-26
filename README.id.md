@@ -67,15 +67,29 @@ Dalam tutorial ini, kita akan mendesain perangkat smart home yang dilengkapi ole
 ## <emp>Smart Home</emp> dan komponennya
 Smart home merupakan salah satu penerapan IoT di lingkungan tempat tinggal. IoT memiliki infrastruktur yang terdiri dari node, gateway, web app server. Node mencakup setiap device yang digunakan sebagai input dan output dari sistem. Pada smart home yang termasuk node adalah sebagian besar perangkat elektronik contohnya lampu, ac, tv dll. Kerja node dikendalikan oleh gateway. Node bekerja sesuai dengan instruksi program yang ditulis pada gateway. 
 
+![Architectur](Documentation/img/arch.png)
 
 
+Gateway dapat berupa microcontroller maupun mini pc. Pemilihan komponen didasari 2 faktor yakni performa komputasi dan konsumsi daya. Pada kondisi komputasi dan daya rendah, microcontroller cocok diaplikasikan. Sehingga pada tutorial ini gateway yang digunakan adalah microcontroller. Fungsi lain dari gateway yakni menghubungkan antara node dengan cloud server dan mengatur komunikasi datanya. Antara node dan gateway dihubungkan dengan jaringan internet, kali ini kita akan menggunakan wifi. 
 
+Setiap data yang dibutuhkan oleh sistem, disimpan dalam server. Umumnya server yang digunakan berbasis cloud karena memudahkan modifikasi dan update secara OTA (over the air). Web Server dapat dianggap sebagai hardware dan software. Istilah hardware merujuk pada penggunaan server untuk penyimpanan dokumen, file dan intruksi. Server juga digunakan untuk memproses <em>request</em> dan <em>service</em> saat berperan sebagai software.
+Komponen yang dibutuhkan pada tutorial ini adalah:
+  1. LED
+  2. Breadboard
+  3. Resistor 1K ohm
+  4. ESP8266 sebagai modul wifi
+  5. jumper
+
+![Component](Documentation/img/component.png)
+   
 <!-- Konfigurasi Sistem -->
 <a name="system"></a>
 ## Konfigurasi Sistem
-![Konfigutasi sistem](./Documentation/img/System.png)
+![Konfigurasi sistem](./Documentation/img/System.png)
 
+Karena kita akan menggunakan instruksi berupa pesan teks, maka dibutuhkan komponen tambahan untuk memproses pesan yang dikirimkan menjadi instruksi yang mampu dipahami oleh mesin.  wit.ai digunakan untuk mengubah kalimat menjadi struktur data tertentu yang akan digunakan pada program. Penggunaan wit.ai juga memudahkan proses training data yang dilakukan agar sistem mampu mengenali maksud dari pesan yang dikirimkan pengguna.
 
+Antarmuka pengguna dan sistem akan menggunakan Facebook Messenger yang terhubung dengan server. Pesan yang dikirimkan melalui Facebook Messenger diteruskan ke wit.ai yang telah dilatih untuk menghasilkan respon terhadap pesan tertentu. Respon berupa struktur data dan dokumen lainnya akan disimpan di server. Komunikasi antara server dan gateway (Nodemcu ESP8266) menggunakan MQTT sebagai broker. Sedangkan gateway dan tiap node terhubung dalam jaringan wifi yang sama. 
 <!-- Bot Percakapan -->
 <a name="chatbot"></a>
 ## Bot percakapan sebagai sistem kontrol
@@ -101,11 +115,13 @@ Smart home merupakan salah satu penerapan IoT di lingkungan tempat tinggal. IoT 
   <a name="wit.ai"></a>
   
   ### Wit.ai
+
+  wit.ai merupakan platform NLP (Natural Language Processing) open source yang akan digunakan untuk mengenali pesan text. Text yang dikirimkan pengguna akan diubah menjadi intruksi spesifik terkait operasional peralatan seperti menyalakan/mematikan lampu. Penggunaan wit.ai memudahkan pengguna untuk melatih aplikasi dalam mengenali pesan yang bervariasi. Proses "latihan" (training) dilakukan dengan memasukkan "utterance" berisi kata/kalimat yang akan dikirimkan pengguna beserta "intent" yakni maksud dari kalimat tersebut. Intent berupa struktur data tertentu yang kemudian dimasukkan dalam intruksi level device. wit akan membantu aplikasi dalam mengenali kata kunci dan pola untuk merujuk pada aktivitas tertentu.
   ### Buat aplikasimu
 
   <a name="witai_token"></a>
 
-  Pada bagian ini saya akan menunjukkan bagaimana cara membuat aplikasi untuk mengontrol lampu. Berikut panduannya untuk membuat Wit.ai
+  Pada bagian ini saya akan menunjukkan bagaimana cara membuat aplikasi untuk mengontrol lampu. Berikut panduan untuk membuat Wit.ai
   1. Mendaftarkan akun
    
       Pengguna hanya dapat mendaftarkan akun baru dengan menggunakan akun facebook. Jika belum memiliki akun facebook, silahkan buat akun terlebih dahulu. Kunjungi laman [wit.ai](https://wit.ai) dan buat akun baru dengan memilih “Continue with facebook”.
