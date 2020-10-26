@@ -58,7 +58,7 @@
 <a name="introduction"></a>
 
 ## Introduction
-On this day, most of people using gadget to support their activity. The development of computer and embedded devices make poeple can control other devices with their smartphone over internet. This is called Internet of Things. For example application of Internet of Things is smart home.
+These days, most people use gadget to support their activities. The development of computer and embedded devices make poeple able to control other devices with their smartphone over internet. This is called Internet of Things. The example of Internet of Things application is smart home.
 
 In this repository we will design a smart home system that integrate with Chat bot to control electronic devices. Message from user recognized by chat bot, and that command will be forward to electronic devices. User can control their electronic devices anytime and anywhere. 
 
@@ -67,7 +67,7 @@ In this repository we will design a smart home system that integrate with Chat b
 <a name="smarthome"></a>
 
 ## Smart Home Unit and Component
-In IoT there are 3 important things => node, gateaway and server. Node is the edges devices that have function to be a input or ouput. Example of nodes are Lamp, Air Conditioner, Pump, Selenium Door. Gateaway is a connector between server and node. Gateaway can be a microcontroller or mini computer. This is components needed in this tutorial
+In IoT, there are 3 important things => node, gateaway and server. Node is the edge devices that have function to be an input or output. The example of nodes are Lamp, Air Conditioner, Pump, and Selenium Door. Gateaway is a connector between server and node. Gateaway can be a microcontroller or mini computer. These are components needed in this tutorial:
 1. LED
 2. Breadboard
 3. Infrared
@@ -90,22 +90,22 @@ In IoT there are 3 important things => node, gateaway and server. Node is the ed
   <a name="messenger"></a>
 
   ### Facebook Messenger
-  Facebook Messenger is used for connecting server and user. To getting started you can follow this [tutorial](https://developers.facebook.com/docs/messenger-platform/)
+  Facebook Messenger is used for connecting server and user. To get started you can follow this [tutorial](https://developers.facebook.com/docs/messenger-platform/)
   
   <a name="wit.ai"></a>
   
   ### Wit.ai
   ### Build Your APP
-  On this section i will show you how to build an app to control lamp.
+  On this section we will show you how to build an app to control lamp.
   1. For intermezzo you can follow this [tutorial](https://wit.ai/docs/)
-  2. After you create account you can check this gif
+  2. After you create an account you can check this gif
   ![Alt Text](./Documentation/gif/en.gif)
   3. There are 4 important things in wit.ai
      - Utterance
      - Intent
      - Entity
      - Trait
-  4. To improve the detection you need train your app. Just add Utterance and labelling it. After that wit.ai will train your data set
+  4. To improve the detection you need to train your app. Just add Utterance and labelling it. After that wit.ai will train your data set
 
 <!-- <a name="communication"></a> -->
 
@@ -198,7 +198,7 @@ B. Wit.ai
 
 1. Get Message from text parameter
 ```js
-    // This function use for get response from wit.ai. This function require a string parameter
+    // This function is used to get response from wit.ai. This function requires a string parameter
       getMessage: async function(query){
     var url =`https://api.wit.ai/message?v=20201020&q=${encodeURI(query)}` 
 
@@ -230,7 +230,7 @@ B. Wit.ai
 
 2. Get Message from voice notes
 ```js
-    // This function use for get response from wit.ai. This function require a audio file as parameter
+    // This function is used to get response from wit.ai. This function requires an audio file as parameter
       getMessagefromAudio: async function(bin_data, mimetype_){
     var options = {
         method: 'POST',
@@ -271,7 +271,7 @@ C. NodeMCU
 1. Received data from MQTT Broker and Turn on/off the lamp/AC
 ```c
 
-// If a message is received on the topic esp8266/ghiscure/AC, you check if the message is either 1 or 0. Turns the ESP GPIO according to the message
+// If a message is received on the topic esp8266/ghiscure/AC, check if the message is either 1 or 0. Turns the ESP GPIO according to the message
 
   if(topic=="esp8266/ghiscure/AC"){
       Serial.print("Changing GPIO 4 to ");
@@ -284,7 +284,7 @@ C. NodeMCU
         Serial.print("Off");
       }
   }
-    // If a message is received on the topic esp8266/ghiscure/lamp, you check if the message is either 1 or 0. Turns the ESP GPIO according to the message
+    // If a message is received on the topic esp8266/ghiscure/lamp, check if the message is either 1 or 0. Turns the ESP GPIO according to the message
 
   if(topic=="esp8266/ghiscure/lamp"){
       Serial.print("Changing GPIO 5 to ");
@@ -369,7 +369,7 @@ D.  Server
 ```
 https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
 ```
-There are 4 items that you must pay attention
+There are 4 items that you must pay attention to
 ![Facebook](./Documentation/img/facebook.png)
 
 
@@ -388,7 +388,7 @@ npm start
 
 E.  NodeMCU
 
-Because of limited devices, in this demonstration only use LED. Actually this led can represent AC, Pump or another electronic devices.
+Because of limited devices, in this demonstration we will use LED. This led can represent AC, Pump or another electronic devices.
 1. Install [Arduino](https://www.arduino.cc/en/main/software)
 ```
 https://www.arduino.cc/en/main/software
@@ -415,7 +415,7 @@ const char* password = ""; // password ssid
    ```
    https://devcenter.heroku.com/articles/deploying-nodejs
    ```
-   2. You must edit environment variable. You can use this [tutorial](https://devcenter.heroku.com/articles/config-vars) to edit env variable. 
+   2. You must edit the environment variable. You can use this [tutorial](https://devcenter.heroku.com/articles/config-vars) to edit the env variable. 
    ```
    https://devcenter.heroku.com/articles/config-vars
    ```
@@ -425,7 +425,7 @@ const char* password = ""; // password ssid
       *  witai_token
    4. Change your Facebook callback URL to heroku
 2. Ngrok <br>
-   You can use ngrok to forwarding http protocol. Follow this [tutorial](https://ngrok.com/docs) to forward your localhost to public. Change your Facebook's URL callback to ngrok url.
+   You can use ngrok for forwarding http protocol. Follow this [tutorial](https://ngrok.com/docs) to forward your localhost to public. Change your Facebook's URL callback to ngrok url.
    ```bash
    ngrok http 3000
    ```
