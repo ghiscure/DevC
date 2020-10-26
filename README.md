@@ -378,7 +378,7 @@ There are 4 items that you must pay attention to
 
 2. For VERIFY_TOKEN, it is up to you
 3. You must have [Wit.ai Token](#install_witai)
-4. After you have PAGE_ACCESS_TOKEN,VERIFY_TOKE  and Wit.ai Token, just follow this step
+4. After you have PAGE_ACCESS_TOKEN,VERIFY_TOKEN and Wit.ai Token, just follow this step
 ```bash
 git clone https://github.com/ghiscure/DevC
 cd DevC
