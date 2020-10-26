@@ -349,7 +349,7 @@ https://wit.ai/docs/quickstart
 
 D.  Server
 #### Prerequisite
-1. Before you use this app, you must register your app in facebook platform. You can follow this tutorial to get PAGE_ACCESS_TOKEN.
+1. Before you use this app, you must register your app in facebook platform. You can follow this [tutorial](https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup) to get PAGE_ACCESS_TOKEN.
 ```
 https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
 ```
@@ -410,9 +410,9 @@ const char* password = ""; // password ssid
       *  witai_token
    4. Change your URL callback in facebook account
 2. Ngrok <br>
-   You can use ngrok to forwarding http protocol. Follow this tutorial to forward your localhost to public. Change your Facebook's URL callback to ngrok url.
-   ```
-   https://ngrok.com/docs
+   You can use ngrok to forwarding http protocol. Follow this [tutorial](https://ngrok.com/docs) to forward your localhost to public. Change your Facebook's URL callback to ngrok url.
+   ```bash
+   ngrok http 3000
    ```
 
 
