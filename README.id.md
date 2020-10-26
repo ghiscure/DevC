@@ -32,9 +32,9 @@
 * **[Bot percakapan sebagai sistem kontrol](#chatbot)**
   - [Facebook Messenger](#messenger)
   - [Wit.ai](#wit.ai)
-* **[Komunikasi](#communication)**
+<!-- * **[Komunikasi](#communication)**
   - [API](#api)
-  - [MQTT](#mqtt)
+  - [MQTT](#mqtt) -->
 * **[Bagaimana sistem ini bekerja](#works)**
   - [Facebook Messenger](#facebook_messenger)
   - [Wit.ai](#Wit_ai)
