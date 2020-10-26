@@ -381,11 +381,11 @@ npm start
 
 E.  NodeMCU
 
-1. Install Arduino
+1. Install [Arduino](https://www.arduino.cc/en/main/software)
 ```
 https://www.arduino.cc/en/main/software
 ```
-2. Install NodeMCU board in Arduino
+2. Install [NodeMCU board](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/) in Arduino
 ```
 https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 ```
@@ -405,11 +405,11 @@ const char* password = ""; // password ssid
 
 ### Deploy
 1. Heroku
-   1. You can use this tutorial to deploy app
+   1. You can use this [tutorial](https://devcenter.heroku.com/articles/deploying-nodejs) to deploy app
    ```
    https://devcenter.heroku.com/articles/deploying-nodejs
    ```
-   2. You must edit environment variable. You can use this tutorial to edit env variable. 
+   2. You must edit environment variable. You can use this [tutorial](https://devcenter.heroku.com/articles/config-vars) to edit env variable. 
    ```
    https://devcenter.heroku.com/articles/config-vars
    ```
