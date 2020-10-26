@@ -7,7 +7,7 @@
   <h3 align="center">ghiscure</h3>
 
   <p align="center">
-    bot percakapan simpel untuk mengatur rumah anda
+    bot percakapan simpel untuk mengatur perangkat di rumah anda
     <br />
     <a href="#toc"><strong>Jelajahi dokumentasi »</strong></a>
     <br />
