@@ -405,19 +405,20 @@ npm start
 
 D.  NodeMCU
 
-1. Pasang Aplikasi [Arduino](https://www.arduino.cc/en/main/software)
+Karena keterbatasan perangkat, pada percobaan ini hanya menggunakan LED. LED tersebut dapat mempresentasikan AC, Pompa Air, Kran air atau alat elektronik lainnya.
+1. Memsang Aplikasi [Arduino](https://www.arduino.cc/en/main/software)
 ```
 https://www.arduino.cc/en/main/software
 ```
-2. Pasang [<em>Board</em> NodeMCU](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/) di Arduino
+2. Memasang [<em>Board</em> NodeMCU](https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/) di Arduino
 ```
 https://randomnerdtutorials.com/how-to-install-esp8266-board-arduino-ide/
 ```
 1. Skema Pemasangan
 ![Skematik](Documentation/img/schmatic.jpg)
-4. Ubah konfigurasi username dan password yang anda punya
+4. Ubah konfigurasi username dan password wifi yang anda punya
 ```c
-// ubah kredensial di bawah agar ESP8266 milik anda dapat terkoneksi ke router 
+// ubah kredensial di bawah agar ESP8266 milik anda dapat terkoneksi ke internet 
 const char* ssid = ""; // nama ssid anda
 const char* password = ""; // password ssid
 ```

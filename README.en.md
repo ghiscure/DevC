@@ -388,6 +388,7 @@ npm start
 
 E.  NodeMCU
 
+Because of limited devices, in this demonstration only use LED. Actually this led can represent AC, Pump or another electronic devices.
 1. Install [Arduino](https://www.arduino.cc/en/main/software)
 ```
 https://www.arduino.cc/en/main/software
