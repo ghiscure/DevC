@@ -372,8 +372,9 @@ https://developers.facebook.com/docs/messenger-platform/getting-started-app-setu
 There are 4 items that you must pay attention to
 ![Facebook](./Documentation/img/facebook.png)
 
-
-2. After you have PAGE_ACCESS_TOKEN, just follow this step
+2. For VERIFY_TOKEN, it is up to you
+3. You must have [Wit.ai Token](#install_witai)
+4. After you have PAGE_ACCESS_TOKEN,VERIFY_TOKE  and Wit.ai Token, just follow this step
 ```bash
 git clone https://github.com/ghiscure/DevC
 cd DevC
@@ -382,7 +383,7 @@ mv .env.example .env
 npm install
 npm start
 ```
-3. Server configuration is done
+5. Server configuration is done
 
 <a name="nodemcu"></a>
 
