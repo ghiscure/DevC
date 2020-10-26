@@ -73,7 +73,7 @@
 <a name="chatbot"></a>
 ## Bot percakapan sebagai sistem kontrol
 
-  <a name="mesenger"></a>
+  <a name="messenger"></a>
 
   ### Facebook Messenger
   Facebook messenger digunakan untuk menerima pesan dari user. Pesan tersebut dapat berupa pesan suara maupun pesan teks. Untuk pembuatan messenger anda dapat mengikuti panduan berikut
@@ -120,12 +120,13 @@
       * Intents
       * Entity
       * Traits
-  6. Lengkapi intent
-  
-    Setelah mencoba query dan anda menemukan beberapa kehendak yang tidak sesuai dengan ujaran yang diberikan, anda dapat kembali ke bagian awal atau understanding dengan menekan bagian “understanding” yang ada di sebelah kiri halaman. di halaman understanding anda akan menemukan query yang anda masukkan tadi. anda dapat mencari query mana yang kehendaknya tidak sesuai dan memberikannya kehendak yang baru yang lebih sesuai.
-  7. Buat entitas
 
-    Pada file JSON yang anda dapatkan sebelumnya anda mendapatkan pula sebuah “entities” yang sebelumnya masih kosong. Anda bisa mulai untuk memberikan entitas kepada setiap ujaran yang anda miliki untuk melatih aplikasi wit lebih jauh lagi. pilih ujaran yang diinginkan, highlight atau blok bagian dari ujaran yang nantinya berperan penting pada kehendak yang dikeluarkan, misalnya nilai suhu pada ujaran untuk mengubah suhu ac, atau kata mati/nyala pada ujaran mematikan/menyalakan lampu. nantinya akan muncul sebuah dropdown berisi entities. anda dapat membuat sendiri entitasnya atau menggunakan entitas yang sudah disediakan oleh wit. setelah memilih entitas, klik “Train and Validate” untuk melatih aplikasi agar nantinya juga dapat memberikan entitas dalam keluarannya.
+  6. Lengkapi intent
+
+      Setelah mencoba query dan anda menemukan beberapa kehendak yang tidak sesuai dengan ujaran yang diberikan, anda dapat kembali ke bagian awal atau understanding dengan menekan bagian “understanding” yang ada di sebelah kiri halaman. di halaman understanding anda akan menemukan query yang anda masukkan tadi. anda dapat mencari query mana yang kehendaknya tidak sesuai dan memberikannya kehendak yang baru yang lebih sesuai.
+  7. Buat entitas
+  
+      Pada file JSON yang anda dapatkan sebelumnya anda mendapatkan pula sebuah “entities” yang sebelumnya masih kosong. Anda bisa mulai untuk memberikan entitas kepada setiap ujaran yang anda miliki untuk melatih aplikasi wit lebih jauh lagi. pilih ujaran yang diinginkan, highlight atau blok bagian dari ujaran yang nantinya berperan penting pada kehendak yang dikeluarkan, misalnya nilai suhu pada ujaran untuk mengubah suhu ac, atau kata mati/nyala pada ujaran mematikan/menyalakan lampu. nantinya akan muncul sebuah dropdown berisi entities. anda dapat membuat sendiri entitasnya atau menggunakan entitas yang sudah disediakan oleh wit. setelah memilih entitas, klik “Train and Validate” untuk melatih aplikasi agar nantinya juga dapat memberikan entitas dalam keluarannya.
 
 
 <!-- <a name="communication"></a>
