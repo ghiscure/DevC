@@ -298,6 +298,8 @@ client.subscribe("esp8266/ghiscure/lamp");
 
 ### Installation
 
+<a name="git"></a>
+
 A.  Git
 1. Start by updating the package index
 ```bash
@@ -315,6 +317,7 @@ git --version
 ```
 https://git-scm.com/download/win
 ```
+<a name="nodejs"></a>
 
 B.  NodeJs
 1. Debian Based
@@ -336,7 +339,7 @@ https://nodejs.org/en/download/
 
 C.  Facebook Messenger
 #### Prerequisite
-Before you use this app, you must register your app in facebook platform. You can follow this tutorial to get PAGE_ACCESS_TOKEN.
+1. Before you use this app, you must register your app in facebook platform. You can follow this tutorial to get PAGE_ACCESS_TOKEN.
 ```
 https://developers.facebook.com/docs/messenger-platform/getting-started-app-setup
 ```
@@ -344,7 +347,7 @@ There are 4 items that you must pay attention
 ![Facebook](./Documentation/img/facebook.png)
 
 
-After you have PAGE_ACCESS_TOKEN, just follow this step
+2. After you have PAGE_ACCESS_TOKEN, just follow this step
 ```bash
 git clone https://github.com/ghiscure/DevC
 cd DevC
